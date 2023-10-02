@@ -3,7 +3,7 @@ import ContactUsGallery from "../components/ContactUsGallery";
 
 const ContactPage = () => {
   return (
-    <main className="w-full h-full bg-white font-light">
+    <main className="w-full h-full bg-white font-light font-Poppins">
       <ContactUsGallery />
     </main>
   );

@@ -3,7 +3,7 @@ import InsightsGallery from "../components/InsightsGallery";
 
 const InsightsPage = () => {
   return (
-    <main className="w-full h-full bg-white font-light">
+    <main className="w-full h-full bg-white font-light font-Poppins">
       <InsightsGallery />
     </main>
   );

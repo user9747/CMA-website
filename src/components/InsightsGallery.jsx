@@ -1,17 +1,15 @@
 // import { graphql, useStaticQuery } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import { gsap } from "gsap";
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import Nav from "./Nav";
 function InsightsGallery() {
   return (
-    <div className="h-full w-full absolute top-0 left-0">
+    <div className="h-full w-full">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
       >
         <div className="bg-black flex items-center justify-center w-full h-full">
-          <div className="w-[90%] sm:w-[90%] text-white text-xs sm:text-xl font-light sm:leading-6">
+          <div className="w-[90%] sm:w-[90%] text-white text-xs sm:text-xl sm:leading-6">
             OUR MISSION IS TO TRANSFORM DESIGN DREAMS INTO TANGIBLE REALITIES;
             MAKING SPACES. THAT NOT ONLY STAND AS A TESTAMENT TO INNOVATION BUT
             ALSO TO ENHNCE THE QUALITY OF LIFE WITH A TEAM OF VISIONARY
@@ -35,7 +33,7 @@ function InsightsGallery() {
             <Nav />
           </nav>
           <div className="bg-black flex items-center justify-center w-full h-full row-span-2 sm:row-span-1">
-            <div className="w-[90%] sm:w-[90%] text-white text-xs sm:text-xl font-light sm:leading-6">
+            <div className="w-[90%] sm:w-[90%] text-white text-xs sm:text-xl sm:leading-6">
               OUR TEAM IS CONSTANTLY PUSHING THE BOUNDARIES OF INNOVATIONS
               MAXIMISING THE ACCESSIBILITY TO ALL.
               <br /> <br />

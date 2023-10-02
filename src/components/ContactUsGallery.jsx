@@ -1,11 +1,10 @@
 // import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { gsap } from "gsap";
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import Nav from "./Nav";
 function ContactUsGallery() {
   return (
-    <div className="h-full w-full absolute top-0 left-0">
+    <div className="h-full w-full">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
@@ -28,7 +27,7 @@ function ContactUsGallery() {
             }}
           />
           <div className="text-white flex h-full w-full items-end justify-center absolute left-0 bottom-0">
-            <div className="text-center text-[0.9rem] sm:text-[1.85rem] mb-1 sm:mb-4 w-max-[80%] font-light">
+            <div className="text-center text-[0.9rem] sm:text-[1.85rem] mb-1 sm:mb-4 w-max-[80%]">
               C1, BELHAVEN GARDENS, KOWDIAR,TRIVANDRUM,
               <br />
               INDIA 695003, 0471-4053877
@@ -51,7 +50,7 @@ function ContactUsGallery() {
             formats={["auto", "webp"]}
           />
           <div className="bg-black flex items-center justify-center w-full h-full">
-            <div className="w-[80%] sm:w-[75%] text-white text-xs sm:text-xl font-light sm:leading-6">
+            <div className="w-[80%] sm:w-[75%] text-white text-xs sm:text-xl sm:leading-6">
               STARTED INDULGING IN DESIGN PRACTICE SINCE 1975, FOUNDED
               CHANDRAMOHAN ASSOCIATES IN 1984 AND THE JOURNEY GOES ON....
             </div>

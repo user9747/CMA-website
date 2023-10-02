@@ -15,7 +15,7 @@ function Nav() {
           className="w-[4rem] sm:w-[9rem] ml-auto sm:ml-0 block"
         />
       </Link>
-      <ol className="text-white flex flex-col items-end sm:items-start gap-2.5 sm:gap-3 font-light text-xs sm:text-lg sm:text-[1.7rem] mt-7 sm:mt-14">
+      <ol className="text-white flex flex-col items-end sm:items-start gap-2.5 sm:gap-3 text-xs sm:text-lg sm:text-[1.7rem] mt-7 sm:mt-14">
         <li>
           <Link to="/">PROJECTS</Link>
         </li>

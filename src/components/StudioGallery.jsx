@@ -1,11 +1,10 @@
 // import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { gsap } from "gsap";
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import Nav from "./Nav";
 function StudioGallery() {
   return (
-    <div className="h-full w-full absolute top-0 left-0">
+    <div className="h-full w-full">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
