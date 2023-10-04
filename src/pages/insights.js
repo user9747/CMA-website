@@ -1,5 +1,6 @@
 import React from "react";
 import InsightsGallery from "../components/InsightsGallery";
+import { SEO } from "../components/SEO";
 
 const InsightsPage = () => {
   return (
@@ -11,4 +12,4 @@ const InsightsPage = () => {
 
 export default InsightsPage;
 
-export const Head = () => <title>CHANDRAMOHAN ASSOCIATES</title>;
+export const Head = () => <SEO />;

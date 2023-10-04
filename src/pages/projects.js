@@ -1,15 +1,15 @@
 import React from "react";
-import ContactUsGallery from "../components/ContactUsGallery";
+import ProjectsGallery from "../components/ProjectsGallery";
 import { SEO } from "../components/SEO";
 
-const ContactPage = () => {
+const ProjectsPage = () => {
   return (
     <main className="w-full h-full bg-white font-light font-Poppins">
-      <ContactUsGallery />
+      <ProjectsGallery />
     </main>
   );
 };
 
-export default ContactPage;
+export default ProjectsPage;
 
 export const Head = () => <SEO />;

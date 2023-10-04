@@ -1,5 +1,6 @@
 import React from "react";
 import StudioGallery from "../components/StudioGallery";
+import { SEO } from "../components/SEO";
 
 const StudioPage = () => {
   return (
@@ -11,4 +12,4 @@ const StudioPage = () => {
 
 export default StudioPage;
 
-export const Head = () => <title>CHANDRAMOHAN ASSOCIATES</title>;
+export const Head = () => <SEO />;
