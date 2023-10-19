@@ -1,9 +1,9 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import React, { useEffect, useRef, useState } from "react";
-import Nav from "./Nav";
 import { gsap } from "gsap";
+import React, { useEffect, useRef, useState } from "react";
+import { animate } from "../utils/anim";
 import ImageWithTransition from "./ImageWithTransition";
+import Nav from "./Nav";
 function ProjectsGallery() {
   const [rectangleOneImage1Count, setRectangleOneImage1Count] = useState(0);
   const [rectangleOneImage2Count, setRectangleOneImage2Count] = useState(0);
@@ -51,69 +51,35 @@ function ProjectsGallery() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      //  First Reactangle Animation
-      let tl = gsap.timeline({
-        delay: 0,
-        repeat: -1,
-        defaults: {
-          duration: 1.3,
-          ease: "power4.out",
-          delay: 0,
-        },
-      });
-      tl.to("#rect-image-2", {
-        y: "-100%",
-        opacity: 0,
-        duration: 0,
-        delay: 1,
-        onComplete: (a) => {
+      // rectangle image
+      animate({
+        id: "#rect-image-2",
+        onAddImage: () => {
           setRectangleOneImage2Count((c) =>
             allImages.rects?.edges?.length > c + 2 ? c + 2 : 0
           );
+        },
+        onSlideImage: () => {
+          setRectangleOneImage1Count((c) =>
+            allImages.rects?.edges?.length > c + 2 ? c + 2 : 0
+          );
+        },
+      });
+
+      // square image
+      animate({
+        id: "#sqr-image-2",
+        onAddImage: () => {
           setSquareOneImage2Count((c) =>
             allImages.squares?.edges?.length > c + 3 ? c + 3 : 0
           );
         },
-      }).to("#rect-image-2", {
-        opacity: 1,
-        y: 0,
-        onComplete: (a) => {
-          setRectangleOneImage1Count((c) =>
-            allImages.rects?.edges?.length > c + 2 ? c + 2 : 0
-          );
+        onSlideImage: () => {
           setSquareOneImage1Count((c) =>
             allImages.squares?.edges?.length > c + 3 ? c + 3 : 0
           );
         },
-        delay: 3,
       });
-
-      //  suqre
-      // let stl = gsap.timeline({
-      //   delay: 0,
-      //   repeat: -1,
-      //   defaults: {
-      //     duration: 1,
-      //     ease: "power2.inOut",
-      //     delay: 0,
-      //   },
-      // });
-      // tl.to("#sqr-image-2", {
-      //   y: "-100%",
-      //   opacity: 0,
-      //   duration: 0,
-      //   delay: 1,
-      //   onComplete: (a) => {
-      //     setSquareOneImage2Count((c) => c + 3);
-      //   },
-      // }).to("#sqr-image-2", {
-      //   opacity: 1,
-      //   y: 0,
-      //   onComplete: (a) => {
-      //     setSquareOneImage1Count((c) => c + 3);
-      //   },
-      //   delay: 3,
-      // });
     }, comp);
 
     return () => {
@@ -125,26 +91,6 @@ function ProjectsGallery() {
 
   return (
     <div className="h-full w-full" ref={comp}>
-      {/* <div className="w-full h-full relative">
-        <div id="rect-image-1" className="absolute top-0 left-0 h-full w-full">
-          <GatsbyImage
-            image={
-              allImages.rects?.edges?.[rectangleOneImage1Count]?.node
-                .childImageSharp.gatsbyImageData
-            }
-            alt="hhhh"
-          />
-        </div>
-        <div id="rect-image-2" className="absolute top-0 left-0 h-full w-full">
-          <GatsbyImage
-            image={
-              allImages.rects?.edges?.[rectangleOneImage2Count]?.node
-                .childImageSharp.gatsbyImageData
-            }
-            alt="hhhh"
-          />
-        </div>
-      </div> */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
@@ -181,7 +127,7 @@ function ProjectsGallery() {
           </nav>
           <ImageWithTransition
             id1="rect-image-1"
-            id2="rect-image-2"
+            id2="sqr-image-2"
             image1={
               allImages.squares?.edges?.[squareOneImage1Count]?.node
                 .childImageSharp.gatsbyImageData
@@ -193,7 +139,7 @@ function ProjectsGallery() {
           />
           <ImageWithTransition
             id1="rect-image-1"
-            id2="rect-image-2"
+            id2="sqr-image-2"
             image1={
               allImages.squares?.edges?.[squareOneImage1Count + 1]?.node
                 .childImageSharp.gatsbyImageData
@@ -205,7 +151,7 @@ function ProjectsGallery() {
           />
           <ImageWithTransition
             id1="rect-image-1"
-            id2="rect-image-2"
+            id2="sqr-image-2"
             image1={
               allImages.squares?.edges?.[squareOneImage1Count + 2]?.node
                 .childImageSharp.gatsbyImageData
