@@ -13,7 +13,7 @@ export const animate = ({ id, onAddImage, onSlideImage }) => {
     x: "100%",
     opacity: 0,
     duration: 0,
-    delay: 1,
+    delay: 3,
     onComplete: (a) => {
       onAddImage();
     },

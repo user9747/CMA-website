@@ -10,8 +10,24 @@ function ProjectsGallery() {
   const [squareOneImage1Count, setSquareOneImage1Count] = useState(0);
   const [squareOneImage2Count, setSquareOneImage2Count] = useState(0);
   const comp = useRef();
-  const allImages = useStaticQuery(graphql`
+  const allData = useStaticQuery(graphql`
     {
+      rectData: allProjectNamesWithDescXlsxRectangle {
+        edges {
+          node {
+            title
+            desc
+          }
+        }
+      }
+      sqrData: allProjectNamesWithDescXlsxSquare {
+        edges {
+          node {
+            title
+            desc
+          }
+        }
+      }
       rects: allFile(
         sort: { name: ASC }
         filter: {
@@ -47,7 +63,7 @@ function ProjectsGallery() {
     }
   `);
 
-  console.log(allImages);
+  console.log(allData);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -56,12 +72,12 @@ function ProjectsGallery() {
         id: "#rect-image-2",
         onAddImage: () => {
           setRectangleOneImage2Count((c) =>
-            allImages.rects?.edges?.length > c + 2 ? c + 2 : 0
+            allData.rects?.edges?.length > c + 2 ? c + 2 : 0
           );
         },
         onSlideImage: () => {
           setRectangleOneImage1Count((c) =>
-            allImages.rects?.edges?.length > c + 2 ? c + 2 : 0
+            allData.rects?.edges?.length > c + 2 ? c + 2 : 0
           );
         },
       });
@@ -71,12 +87,12 @@ function ProjectsGallery() {
         id: "#sqr-image-2",
         onAddImage: () => {
           setSquareOneImage2Count((c) =>
-            allImages.squares?.edges?.length > c + 3 ? c + 3 : 0
+            allData.squares?.edges?.length > c + 3 ? c + 3 : 0
           );
         },
         onSlideImage: () => {
           setSquareOneImage1Count((c) =>
-            allImages.squares?.edges?.length > c + 3 ? c + 3 : 0
+            allData.squares?.edges?.length > c + 3 ? c + 3 : 0
           );
         },
       });
@@ -85,7 +101,7 @@ function ProjectsGallery() {
     return () => {
       ctx.revert();
     };
-  }, [allImages]);
+  }, [allData]);
 
   console.log(rectangleOneImage1Count, rectangleOneImage2Count);
 
@@ -100,24 +116,36 @@ function ProjectsGallery() {
             id1="rect-image-1"
             id2="rect-image-2"
             image1={
-              allImages.rects?.edges?.[rectangleOneImage1Count]?.node
+              allData.rects?.edges?.[rectangleOneImage1Count]?.node
                 .childImageSharp.gatsbyImageData
             }
             image2={
-              allImages.rects?.edges?.[rectangleOneImage2Count]?.node
+              allData.rects?.edges?.[rectangleOneImage2Count]?.node
                 .childImageSharp.gatsbyImageData
+            }
+            textData1={
+              allData?.rectData?.edges?.[rectangleOneImage1Count]?.node
+            }
+            textData2={
+              allData?.rectData?.edges?.[rectangleOneImage2Count]?.node
             }
           />
           <ImageWithTransition
             id1="rect-image-1"
             id2="rect-image-2"
             image1={
-              allImages.rects?.edges?.[rectangleOneImage1Count + 1]?.node
+              allData.rects?.edges?.[rectangleOneImage1Count + 1]?.node
                 .childImageSharp.gatsbyImageData
             }
             image2={
-              allImages.rects?.edges?.[rectangleOneImage2Count + 1]?.node
+              allData.rects?.edges?.[rectangleOneImage2Count + 1]?.node
                 .childImageSharp.gatsbyImageData
+            }
+            textData1={
+              allData?.rectData?.edges?.[rectangleOneImage1Count + 1]?.node
+            }
+            textData2={
+              allData?.rectData?.edges?.[rectangleOneImage2Count + 1]?.node
             }
           />
         </div>
@@ -129,36 +157,50 @@ function ProjectsGallery() {
             id1="rect-image-1"
             id2="sqr-image-2"
             image1={
-              allImages.squares?.edges?.[squareOneImage1Count]?.node
+              allData.squares?.edges?.[squareOneImage1Count]?.node
                 .childImageSharp.gatsbyImageData
             }
             image2={
-              allImages.squares?.edges?.[squareOneImage2Count]?.node
+              allData.squares?.edges?.[squareOneImage2Count]?.node
                 .childImageSharp.gatsbyImageData
+            }
+            textData1={allData?.sqrData?.edges?.[squareOneImage1Count]?.node}
+            textData2={allData?.sqrData?.edges?.[squareOneImage2Count]?.node}
+          />
+          <ImageWithTransition
+            id1="rect-image-1"
+            id2="sqr-image-2"
+            image1={
+              allData.squares?.edges?.[squareOneImage1Count + 1]?.node
+                .childImageSharp.gatsbyImageData
+            }
+            image2={
+              allData.squares?.edges?.[squareOneImage2Count + 1]?.node
+                .childImageSharp.gatsbyImageData
+            }
+            textData1={
+              allData?.sqrData?.edges?.[squareOneImage1Count + 1]?.node
+            }
+            textData2={
+              allData?.sqrData?.edges?.[squareOneImage2Count + 1]?.node
             }
           />
           <ImageWithTransition
             id1="rect-image-1"
             id2="sqr-image-2"
             image1={
-              allImages.squares?.edges?.[squareOneImage1Count + 1]?.node
+              allData.squares?.edges?.[squareOneImage1Count + 2]?.node
                 .childImageSharp.gatsbyImageData
             }
             image2={
-              allImages.squares?.edges?.[squareOneImage2Count + 1]?.node
+              allData.squares?.edges?.[squareOneImage2Count + 2]?.node
                 .childImageSharp.gatsbyImageData
             }
-          />
-          <ImageWithTransition
-            id1="rect-image-1"
-            id2="sqr-image-2"
-            image1={
-              allImages.squares?.edges?.[squareOneImage1Count + 2]?.node
-                .childImageSharp.gatsbyImageData
+            textData1={
+              allData?.sqrData?.edges?.[squareOneImage1Count + 2]?.node
             }
-            image2={
-              allImages.squares?.edges?.[squareOneImage2Count + 2]?.node
-                .childImageSharp.gatsbyImageData
+            textData2={
+              allData?.sqrData?.edges?.[squareOneImage2Count + 2]?.node
             }
           />
         </div>

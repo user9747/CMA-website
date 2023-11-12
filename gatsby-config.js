@@ -46,5 +46,18 @@ module.exports = {
         icon: "src/images/cma.png",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `./src/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-excel`,
+      options: {
+        defval: "",
+      },
+    },
   ],
 };
