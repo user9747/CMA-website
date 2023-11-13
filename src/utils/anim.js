@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+
+const rand = gsap.utils.random(["-100%", "100%"], true);
+
 export const animate = ({ id, onAddImage, onSlideImage }) => {
   let tl = gsap.timeline({
     delay: 0,
@@ -10,7 +13,7 @@ export const animate = ({ id, onAddImage, onSlideImage }) => {
     },
   });
   tl.to(id, {
-    x: "random(100%,-100%)",
+    x: rand(),
     opacity: 0,
     duration: 0,
     delay: 3,
