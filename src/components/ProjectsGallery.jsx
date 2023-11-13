@@ -63,7 +63,6 @@ function ProjectsGallery() {
     }
   `);
 
-  console.log(allData);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -103,7 +102,6 @@ function ProjectsGallery() {
     };
   }, [allData]);
 
-  console.log(rectangleOneImage1Count, rectangleOneImage2Count);
 
   return (
     <div className="h-full w-full" ref={comp}>

@@ -1,30 +1,9 @@
-// import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { gsap } from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
 import Nav from "./Nav";
 function HomeGallery() {
   const comp = useRef();
-  //   const data = useStaticQuery(graphql`
-  //     {
-  //       allFile(
-  //         filter: {
-  //           sourceInstanceName: { eq: "images" }
-  //           relativeDirectory: { regex: "/gallery/home/DESKTOP/" }
-  //         }
-  //       ) {
-  //         edges {
-  //           node {
-  //             name
-  //             childImageSharp {
-  //               gatsbyImageData
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `);
-  //   console.log(data);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {

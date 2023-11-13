@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `CHANDRAMOHAN ASSOCIATES`,
-    description: `A CONSTANT ENDEAVOR IN MAKING SENSIBLE SPACES FOR BETTER LIVING.THE QUEST GOES ON...`,
+    description: `CHANDRAMOHAN ASSOCIATES A CONSTANT ENDEAVOR IN MAKING SENSIBLE SPACES FOR BETTER LIVING.THE QUEST GOES ON...`,
     siteUrl: `https://chandramohanassociates.com/`,
     image: `/cma.png`,
     pathPrefix: "/CMA-website",

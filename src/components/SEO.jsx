@@ -36,9 +36,9 @@ export const SEO = ({ title, description, pathname, children }) => {
                 "@context": "http://schema.org",
                 "@type": "Organization",
                 "name": "CHANDRAMOHAN ASSOCIATES",
-                "description": "A CONSTANT ENDEAVOR IN MAKING SENSIBLE SPACES FOR BETTER LIVING.THE QUEST GOES ON...",
-                "url": "https://www.example.com/",
-                "logo": "https://www.example.com/logo.png",
+                "description": "CHANDRAMOHAN ASSOCIATES A CONSTANT ENDEAVOR IN MAKING SENSIBLE SPACES FOR BETTER LIVING.THE QUEST GOES ON...",
+                "url": "https://chandramohanassociates.com/",
+                "logo": "https://chandramohanassociates.com/cma.png",
                 "sameAs": [],
                 "contactPoint": [
                     {
