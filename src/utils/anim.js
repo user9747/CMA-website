@@ -10,7 +10,7 @@ export const animate = ({ id, onAddImage, onSlideImage }) => {
     },
   });
   tl.to(id, {
-    x: "100%",
+    x: "random(100%,-100%)",
     opacity: 0,
     duration: 0,
     delay: 3,
