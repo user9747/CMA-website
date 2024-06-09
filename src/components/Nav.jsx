@@ -19,7 +19,7 @@ function Nav({ pathname }) {
         <li>
           <Link
             to="/projects"
-            className={pathname.includes("projects") && "underline"}
+            className={pathname?.includes("projects") && "underline"}
           >
             PROJECTS
           </Link>
@@ -27,7 +27,7 @@ function Nav({ pathname }) {
         <li>
           <Link
             to="/studio"
-            className={pathname.includes("studio") && "underline"}
+            className={pathname?.includes("studio") && "underline"}
           >
             STUDIO
           </Link>
@@ -35,7 +35,7 @@ function Nav({ pathname }) {
         <li>
           <Link
             to="/contact-us"
-            className={pathname.includes("contact") && "underline"}
+            className={pathname?.includes("contact") && "underline"}
           >
             CONTACT
           </Link>
@@ -43,7 +43,7 @@ function Nav({ pathname }) {
         <li>
           <Link
             to="/insights"
-            className={pathname.includes("insights") && "underline"}
+            className={pathname?.includes("insights") && "underline"}
           >
             INSIGHTS
           </Link>
