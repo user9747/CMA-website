@@ -4,7 +4,7 @@ import { SEO } from "../components/SEO";
 
 const IndexPage = () => {
   return (
-    <main className="w-full h-full bg-black font-light font-Poppins animate-bg">
+    <main className="w-full h-full bg-black font-light font-Poppins">
       <HomeGallery />
     </main>
   );

@@ -16,7 +16,7 @@ function HomeGallery() {
   }, []);
 
   return (
-    <div className="h-full w-full animate-fade" ref={comp}>
+    <div className="h-full w-full" ref={comp}>
       <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1">
         <div className="h-full w-full relative">
           <StaticImage
