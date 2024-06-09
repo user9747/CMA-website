@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-function InsightsGallery() {
+function InsightsGallery({ pathname }) {
   return (
     <div className="h-full w-full">
       <div
@@ -29,7 +29,7 @@ function InsightsGallery() {
         </div>
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-1">
           <nav className="p-4 sm:p-8 h-full w-full bg-black">
-            <Nav />
+            <Nav pathname={pathname} />
           </nav>
           <div className="bg-black flex items-center justify-center w-full h-full row-span-2 sm:row-span-1">
             <div className="w-[90%] sm:w-[90%] text-white text-xs sm:text-xl sm:leading-6">

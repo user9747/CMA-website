@@ -1,9 +1,9 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Nav from "./Nav";
-function ContactUsGallery() {
+function ContactUsGallery({ pathname }) {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full animate-fade">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
@@ -39,7 +39,7 @@ function ContactUsGallery() {
         </div>
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-1">
           <nav className="p-4 sm:p-8 h-full w-full bg-black">
-            <Nav />
+            <Nav pathname={pathname} />
           </nav>
           <StaticImage
             src="../images/gallery/contact/DESKTOP/2.jpg"
@@ -49,7 +49,7 @@ function ContactUsGallery() {
             formats={["auto", "webp"]}
           />
           <div className="bg-black flex items-center justify-center w-full h-full">
-            <div className="w-[80%] sm:w-[75%] text-white text-xs sm:text-xl sm:leading-6">
+            <div className="w-[80%] sm:w-[75%] text-white text-xs sm:text-xl sm:leading-6 text-left">
               STARTED INDULGING IN DESIGN PRACTICE SINCE 1975, FOUNDED
               CHANDRAMOHAN ASSOCIATES IN 1984 AND THE JOURNEY GOES ON....
             </div>

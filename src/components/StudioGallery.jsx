@@ -1,9 +1,9 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Nav from "./Nav";
-function StudioGallery() {
+function StudioGallery({ pathname }) {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full animate-fade">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 h-full w-full gap-1"
         id="home-grid"
@@ -28,7 +28,7 @@ function StudioGallery() {
         </div>
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-1">
           <nav className="p-4 sm:p-8 h-full w-full bg-black">
-            <Nav />
+            <Nav pathname={pathname} />
           </nav>
           <StaticImage
             src="../images/gallery/studio/DESKTOP/2.jpg"

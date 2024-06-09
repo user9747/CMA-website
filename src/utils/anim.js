@@ -28,4 +28,5 @@ export const animate = ({ id, onAddImage, onSlideImage }) => {
     },
     delay: "random(2,3)",
   });
+  return tl;
 };
